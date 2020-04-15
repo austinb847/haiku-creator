@@ -19,4 +19,14 @@ describe('Haiku', () => {
     expect(notHaiku.lineCheck()).toBe(false);
   });
   
+
+  test('should break up lines into separate words', () => {
+    let poem = new Haiku("On an island of music \n in a city of drumbeats \n the drum dream girldreamed");
+    poem.lineCount();
+    let words = poem.wordSplit(poem.lines[0]);
+    console.log(words); 
+    expect(words).toEqual(["On", "an", "island", "of", "music"]);
+    
+  });
 });
+
