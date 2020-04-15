@@ -1,6 +1,6 @@
 export class Haiku {
-  constructor () {
-    
+  constructor (poem) {
+    this.poem = poem;
 
   }
 }
