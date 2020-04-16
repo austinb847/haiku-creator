@@ -30,9 +30,10 @@ describe('Haiku', () => {
   
   test('should count all vowels in each word in lines', () => {
     let poem = new Haiku("On an island of music \n in a city of drumbeats \n the drum dream girldreamed");
-    poem.wordSplit();
-    poem.vowelCount();
-    expect(poem.syllables).toBe(7);
+    poem.lineCount();
+    let words = poem.wordSplit(poem.lines[0]);
+    let vowels = poem.vowelCount(words);
+    expect(poem.syllables).toBe(3);
   });
   
 });
