@@ -40,6 +40,11 @@ export class Haiku {
   } 
 
   silentVowelCount(word) {
+    let vowels = word.match(/[aeiouy]/gi);
+    let counter = 0;
+    if (word.length <= 3) {
+      counter = 1;
+    }
     let lastChar = word.length -1;
     if (word.charAt(lastChar) === "e") {
       this.vowels -= 1;
@@ -48,6 +53,7 @@ export class Haiku {
     if (this.vowels === 0) {
       this.vowels += 1;
     }
+    
 
     /* this.words = this.line.split(" ");
     let vowels = this.vowels;
