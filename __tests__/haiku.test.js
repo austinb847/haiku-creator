@@ -24,7 +24,6 @@ describe('Haiku', () => {
     let poem = new Haiku("On an island of music \n in a city of drumbeats \n the drum dream girldreamed");
     poem.lineCount();
     let words = poem.wordSplit(poem.lines[0]);
-    console.log(words); 
     expect(words).toEqual(["On", "an", "island", "of", "music"]);
   });
   
@@ -33,8 +32,7 @@ describe('Haiku', () => {
     poem.lineCount();
     let words = poem.wordSplit(poem.lines[0]);
     let vowels = poem.vowelCount(words);
-    expect(poem.syllables).toBe(3);
+    expect(poem.syllables).toEqual([7]);
   });
   
 });
-

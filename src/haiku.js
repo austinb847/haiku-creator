@@ -27,9 +27,16 @@ export class Haiku {
     return splitWords.filter(function(entry) { return entry.trim() != ''; });
   }
 
-  vowelCount() {
+  vowelCount(lineOfWords) {
+    let numSyllables = 0;
+    lineOfWords.forEach(function(word) {
+      
+      let vowels = word.match(/[aeiou]/gi);
+      let count = vowels === null ? 0 : vowels.length;
+      numSyllables += count;
+    }); 
+    this.syllables.push(numSyllables);
     
-    let vowels = ["a", "e", "i", "o", "u", "y"];
-  }
+  } 
 
 }
