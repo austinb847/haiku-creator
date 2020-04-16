@@ -5,7 +5,7 @@ export class Haiku {
     this.lineOne = [];
     this.lineTwo = [];
     this.lineThree = [];
-    this.vowels = [];
+    this.vowels = 0;
     this.syllables = [];
   }
 
@@ -28,15 +28,45 @@ export class Haiku {
   }
 
   vowelCount(lineOfWords) {
-    let numSyllables = 0;
+    let numVowels = 0;
     lineOfWords.forEach(function(word) {
       
-      let vowels = word.match(/[aeiou]/gi);
+      let vowels = word.match(/[aeiouy]/gi);
       let count = vowels === null ? 0 : vowels.length;
-      numSyllables += count;
+      numVowels += count;
     }); 
-    this.syllables.push(numSyllables);
+    this.vowels.push(numVowels);
+    
+  } 
+
+  silentVowelCount(word) {
+    let lastChar = word.length -1;
+    if (word.charAt(lastChar) === "e") {
+      this.vowels -= 1;
+    }
+
+    if (this.vowels === 0) {
+      this.vowels += 1;
+    }
+
+    /* this.words = this.line.split(" ");
+    let vowels = this.vowels;
+
+    words.forEach(function(word) {
+      vowels = word.split(" ");
+      if (word != "me" && word != "be" && word != "he" && word != "we" && word != "she" && word != "the" && word.charAt(word.length-1) === "e" || word.charAt(word.length-2) === "e") {
+        
+      }
+      vowels = vowels.join("");
+      word.push(vowels);
+    });
+     */
     
   } 
 
 }
+
+// word = word.replace(/([^laeiouy]es|ed)$/i, '');
+//       word = word.replace(/([.!?:;])$/i, '');
+//       word = word.replace(/^y/i, '');
+//       this.lineSyllableHolder.push(word.match(/[aeiouy]{1,2}/gi).length);
