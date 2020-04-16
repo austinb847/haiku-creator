@@ -35,4 +35,18 @@ describe('Haiku', () => {
     expect(poem.syllables).toEqual([7]);
   });
   
+  test('should reduce vowel count by 1 for words with e in the end', () => {
+    let poem = new Haiku("I want to see \n my favorite piece \n of pie");
+    /* let words = poem.wordSplit(poem.lines[0]);
+    poem.lineCount();
+    words.silenVowelCount();
+    let words = poem.wordSplit(poem.lines[0]);
+    let vowels = poem.silentVowelCount(words);
+    expect(poem.syllables).toEqual([4]); */
+    poem.vowels = 2;
+    poem.silentVowelCount("make");
+    console.log(poem.vowels);
+    expect(poem.vowels).toBe(1);
+
+  });
 });
