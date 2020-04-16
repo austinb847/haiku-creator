@@ -5,6 +5,8 @@ export class Haiku {
     this.lineOne = [];
     this.lineTwo = [];
     this.lineThree = [];
+    this.vowels = [];
+    this.syllables = [];
   }
 
   lineCount() {
@@ -24,4 +26,10 @@ export class Haiku {
     const splitWords = line.split(" ");
     return splitWords.filter(function(entry) { return entry.trim() != ''; });
   }
+
+  vowelCount() {
+    
+    let vowels = ["a", "e", "i", "o", "u", "y"];
+  }
+
 }
